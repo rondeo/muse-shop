@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <head>
+        <% include ../partials/head %>
+    </head>
+    <body>
+        <% include ../partials/header %>
+        <!-- /navbar -->
+        <div class="wrapper">
+            <div class="container">
+                <div class="row">
+                    <div class="span3">
+                      <% include ../partials/sidebar %>
+                    </div>
+                    <!--/.span3-->
+                    <div class="span9">                        
+					    <div class="content">
+                            <div class="module">
+                                <div class="module-head">
+                                    <h3>Novo Usuario</h3>
+                                </div>
+                                <div class="module-body">
+                                    <form class="form-horizontal row-fluid">
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Nome</label>
+                                            <div class="controls">
+                                                <input type="text" id="basicinput" placeholder="Digite o nome do produto" class="span8">
+                                            </div>
+                                        </div>
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Fornecedor</label>
+                                            <div class="controls">
+                                                <input type="text" id="basicinput" placeholder="Digite o fornecedor do produto" class="span8">
+                                            </div>
+                                        </div>
+<!--     
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Disabled Input</label>
+                                            <div class="controls">
+                                                <input type="text" id="basicinput" placeholder="You can't type something here..." class="span8" disabled>
+                                            </div>
+                                        </div> -->
+<!--     
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Tooltip Input</label>
+                                            <div class="controls">
+                                                <input data-title="A tooltip for the input" type="text" placeholder="Hover to view the tooltip…" data-original-title="" class="span8 tip">
+                                            </div>
+                                        </div> -->
+
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Ficha Tecnica</label>
+                                            <div class="controls">
+                                                <div class="input-prepend">
+                                                    <span class="add-on">#</span><input class="span8" type="text" placeholder="Altura">       
+                                                </div>
+                                                <div class="input-prepend">
+                                                    <span class="add-on">#</span><input class="span8" type="text" placeholder="Largura">       
+                                                </div>
+                                                <div class="input-prepend">
+                                                    <span class="add-on">#</span><input class="span8" type="text" placeholder="Peso">       
+                                                </div>
+                                                <div class="input-prepend m-top-30">
+                                                    <span class="add-on">#</span><input class="span8" type="text" placeholder="Profundidade">   
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                                <label class="control-label" for="basicinput">Valor de Compra</label>
+                                                <div class="controls">
+                                                    <div class="input-append">
+                                                        <input type="text" placeholder="5.000" class="span8"><span class="add-on">$</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="control-group">
+                                                <label class="control-label" for="basicinput">Valor de Venda</label>
+                                                <div class="controls">
+                                                    <div class="input-append">
+                                                        <input type="text" placeholder="5.000" class="span8"><span class="add-on">$</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <div class="control-group">
+                                                    <label class="control-label" for="basicinput">Quantidade em estoque</label>
+                                                    <div class="controls">
+                                                        <div class="input-append">
+                                                            <input type="text" placeholder="5" class="span8"><span class="add-on">*</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="control-group">
+                                                        <label class="control-label" for="basicinput">Imagens</label>
+                                                        <div class="controls">
+                                                            <div class="input-append">
+                                                                <input type="file" placeholder="5" class="span8">
+                                                            </div>
+                                                        </div>
+                                                        <div class="controls">
+                                                            <div class="input-append">
+                                                                <input type="file" placeholder="5" class="span8">
+                                                            </div>
+                                                        </div>
+                                                        <div class="controls">
+                                                            <div class="btn-group">
+                                                                <button class="btn">+ Images</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+    
+
+                                        <div class="control-group">
+                                            <label class="control-label">Categorias</label>
+                                            <div class="controls">
+                                                <label class="radio">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
+                                                    Beleza
+                                                </label> 
+                                                <label class="radio">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                                    Saude
+                                                </label> 
+                                                <label class="radio">
+                                                    <input type="radio" name="optionsRadios" id="optionsRadios3" value="option3">
+                                                    Utilidades
+                                                </label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="control-group">
+                                            <label class="control-label" for="basicinput">Observacoes</label>
+                                            <div class="controls">
+                                                <textarea class="span8" rows="5"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="control-group">
+                                            <div class="controls">
+                                                <button type="submit" class="btn">Submit Form</button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div><!--/.content-->
+                    </div>
+                    <!--/.span9-->
+                </div>
+            </div>
+            <!--/.container-->
+        </div>
+
+        <% include ../partials/footer %>
+    </body>
