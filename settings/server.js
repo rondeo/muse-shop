@@ -5,12 +5,10 @@ let middlewares = require('./middlewares')
 
 module.exports = function(){    
 
-    //middlewares(app)
+    middlewares(app)
     /** routes call */
-    //routes(app)
-    app.get('/', (req, res) => {
-        res.send('loading here')
-    })
+    routes(app)
+  
     let port = process.env.PORT || 4000;
 
     app.listen(port, function(){
