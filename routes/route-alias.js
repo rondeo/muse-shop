@@ -1,4 +1,4 @@
-module.exports =  (data) => {
+module.exports = function (data){
     let controllerName = data;
     data = data.split('-');
 

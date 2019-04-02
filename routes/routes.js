@@ -3,7 +3,7 @@ let controllers = require('../controllers/mainController')
 let adminControllers = require('../admin/controllers/adminMainControllers')
 let aliasRoutes = require('./route-alias')
 
-module.exports =  (app) => {
+module.exports = function (app) {
 
     app.use(sessions({
         secret: 'a3s2d1qwe3215asdh',
@@ -47,6 +47,4 @@ module.exports =  (app) => {
             res.send('nothing to load')
         }
     })
-
-
 }
