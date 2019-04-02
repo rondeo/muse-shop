@@ -1,11 +1,11 @@
 {
-  "name": "session-test",
+  "name": "muse-shop",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js",
-    "web": "node app.js"
+    "start": "NODE_ENV=dev node app.js",
+    "web": "NODE_ENV=prod node app.js"
   },
   "keywords": [],
   "author": "",

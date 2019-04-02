@@ -1,15 +1,9 @@
-let connection = require('../settings/db/dbConnection')
+let knex = require('../settings/db/knex')
 
 module.exports = function(data){
-    let query = ``;
     return new Promise((resolve, reject) => {
-        connection.query(query, (err, rows) => {
-            if (rows == undefined || rows == ''){
-                reject(new Error('Error rows is undefined'))
-            }
-            else{
-                resolve(rows)
-            }
-        });
-    });   
+        knex('users').insert(data)
+            .then(response => resolve(response) )
+            .catch( err => reject(err))
+    });
 }

@@ -1,3 +1,3 @@
 module.exports = (req, res) => {
-    return res.render('admin/index')
+    return res.render('home')
 }
