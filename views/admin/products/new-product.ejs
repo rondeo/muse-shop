@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+
+<body>
+    <% include ../partials/header %>
+    <!-- /navbar -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <% include ../partials/sidebar %>
+                </div>
+                <!--/.span3-->
+                <div class="span9">
+                    <div class="content">
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Novo Produto</h3>
+                            </div>
+                            <div class="module-body">
+                                <form class="form-horizontal row-fluid" id="newProduct" method="POST" action="/admin/new-product" >
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Nome</label>
+                                        <div class="controls">
+                                            <input type="text" id="basicinput" name="nome" placeholder="Digite o nome do produto" class="span8">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Fornecedor</label>
+                                        <div class="controls">
+                                            <input type="text" id="basicinput" name="fornecedor" placeholder="Digite o fornecedor do produto" class="span8">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Ficha Tecnica</label>
+                                        <div class="controls">
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="altura" placeholder="Altura">
+                                            </div>
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="largura" placeholder="Largura">
+                                            </div>
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="profundidade" placeholder="Profundidade">
+                                            </div>
+
+                                            <div class="input-prepend m-top-30">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="peso" placeholder="Peso">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Valor de Compra</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5.000" name="valorCompra" class="span8 money" value="100"><span class="add-on">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Valor de Venda</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5.000" name="valorVenda" class="span8 money" value="200"><span class="add-on">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Imagens</label>
+                                        <div class="controls">
+                                            <button id="upload_widget" class="cloudinary-button">Upload files</button>
+                                            <div class="file_name"></div>
+                                            <input type="hidden" name="imagens" value="" class="image__hiden"/>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <textarea class="span8" name="obs" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <button type="submit" class="btn">Submit Form</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.content-->
+                </div>
+                <!--/.span9-->
+            </div>
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.wrapper-->
+    <% include ../partials/footer %>
+    <% include ./image-upload.ejs %>
+</body>
+</html>
