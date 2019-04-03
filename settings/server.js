@@ -9,9 +9,12 @@ module.exports = function(){
     middlewares(app)
     /** routes call */
     routes(app)
-    
-    knexTableBuilder()
 
+
+    //to need the app for the first time you need uncoment this line with knexTableBuilder() 
+    //knexTableBuilder()
+
+    
     let port = process.env.PORT || 4000;
 
     app.listen(port, function(){
