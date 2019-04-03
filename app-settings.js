@@ -12,10 +12,10 @@ let config = {
     prod_database: {
         client:'mysql',
         connection: {
-            host: 'localhost',
-            user: 'root',
-            password: '',
-            database: 'museshop'
+            host: 'zf4nk2bcqjvif4in.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+            user: 'bduuk8td0n8e39yu',
+            password: 'q4jclahkemih97f6',
+            database: 'nfrw1dab52rhb5dj'
         },
     },
     root_path: __dirname,
