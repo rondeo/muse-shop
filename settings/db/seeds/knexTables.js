@@ -1,8 +1,6 @@
 let knex = require('../knex')
 module.exports = () => {
     
-    console.log(process.env)
-
     knex.schema.hasTable('products').then((exists) => {
         if (!exists) {
             return knex.schema.createTable('products', (t) => {
