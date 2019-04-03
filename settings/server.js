@@ -4,6 +4,7 @@ let routes = require('../routes/routes')
 let middlewares = require('./middlewares')
 
 module.exports = function(){    
+    console.log(process.env)
 
     middlewares(app)
     /** routes call */
