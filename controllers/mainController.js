@@ -1,8 +1,8 @@
 let homeController = require('./homeController')
 let loginController = require('./loginController')
-let signUpController = require('./signUpController')
 let aboutUsController = require('./aboutUsController')
 let buscaController = require('./buscaController')
+let signUpController = require('./signUpController')
 let contatoController = require('./contatoController')
 
 module.exports = {
