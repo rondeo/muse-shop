@@ -26,16 +26,20 @@ $(function () {
 	});
 });
 
-		jQuery(document).ready(function ($) {
-			$(".scroll").click(function (event) {
-				event.preventDefault();
-				$('html,body').animate({
-					scrollTop: $(this.hash).offset().top
-				}, 1000);
-			});
-		});
-console.log('loading scripts')
+jQuery(document).ready(function ($) {
+	$(".scroll").click(function (event) {
+		event.preventDefault();
+		$('html,body').animate({
+			scrollTop: $(this.hash).offset().top
+		}, 1000);
+	});
+});
+
 window.onload = function(){
 	document.getElementById("loading").remove();
 
+}
+
+function searchProducts(){
+	return false;
 }

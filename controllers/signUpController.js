@@ -9,7 +9,7 @@ module.exports = (req, res, body) => {
         
     }
     if (req.method == 'GET') {
-        return res.render('sign-up')
+        return res.render('site/sign-up')
     }
     if (req.method == 'POST') {
         let data = req.body;

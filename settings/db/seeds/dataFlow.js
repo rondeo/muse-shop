@@ -42,3 +42,4 @@ let formaPagamento = {
 
 // create new products table
 'CREATE TABLE `museshop`.`products` ( `id` INT NOT NULL AUTO_INCREMENT , `nome` VARCHAR(200) NOT NULL , `altura` VARCHAR(200) NOT NULL , `largura` VARCHAR(200) NOT NULL , `profundidade` VARCHAR(200) NOT NULL , `valorCompra` FLOAT NOT NULL , `valorVenda` FLOAT NOT NULL , `fornecedor` VARCHAR(200) NOT NULL , `obs` VARCHAR(200) NOT NULL , `peso` FLOAT NOT NULL , `imagens` TEXT NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;'
+

@@ -1,4 +1,3 @@
-let connection = require('../settings/db/dbConnection')
 let knex = require('../settings/db/knex')
 
 module.exports = {
