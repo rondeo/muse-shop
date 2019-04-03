@@ -21,3 +21,5 @@ let config = {
     root_path: __dirname,
     application_name: 'muse-shop'
 }
+
+module.exports = config
