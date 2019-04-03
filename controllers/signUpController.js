@@ -2,28 +2,28 @@
 let bodyParser = require('body-parser')
 let signUpModel = require('../models/signUpModel')
 
-module.exports = function (req, res, body) {
+module.exports = (req, res, body) => {
     let session = {}
     if (req.session.userid) {
-        res.redirect('/overview')
-        return;
+        return res.redirect('/overview');
+        
     }
     if (req.method == 'GET') {
-        res.render('sign-up')
+        return res.render('site/sign-up')
     }
     if (req.method == 'POST') {
         let data = req.body;
         session = req.session;
-        signUpModel(req.body).then(function (result, err) {
+        signUpModel(req.body).then( ( result, err ) => {
             if (result) {
                 req.session.userid = result[0].user_id
                 req.session.user_role = result[0].user_role
                 req.session.cookie.maxAge = 60000
                 req.session.save()
-                res.redirect('/overview')
+                return res.redirect('/overview')
             }
         }).catch(err => {
-            res.json(err.message)
+            return res.json(err.message)
         })
     }
 }

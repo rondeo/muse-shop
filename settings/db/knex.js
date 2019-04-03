@@ -9,4 +9,5 @@ let options = {
 }
 
 let knex = require('knex')(options);
+
 module.exports = knex;

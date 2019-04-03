@@ -1,6 +1,6 @@
 let connection = require('../settings/db/dbConnection')
 
-module.exports = function(data){
+module.exports = (data) => {
     let query = ``;
     return new Promise((resolve, reject) => {
         connection.query(query, (err, rows) => {

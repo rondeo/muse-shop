@@ -1,3 +1,9 @@
+let homeModel = require('../models/homeModel')
+
 module.exports = (req, res) => {
-    return res.render('admin/index')
+    homeModel.getHomeProducts().then((response) => {
+        
+
+        return res.render('site/home')
+    })
 }

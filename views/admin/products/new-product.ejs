@@ -5,6 +5,7 @@
     <% include ../partials/head %>
 </head>
 
+
 <body>
     <% include ../partials/header %>
     <!-- /navbar -->
@@ -48,11 +49,12 @@
                                             </div>
                                             <div class="input-prepend">
                                                 <span class="add-on">#</span>
-                                                <input class="span8" type="text" name="peso" placeholder="Peso">
+                                                <input class="span8" type="text" name="profundidade" placeholder="Profundidade">
                                             </div>
+
                                             <div class="input-prepend m-top-30">
                                                 <span class="add-on">#</span>
-                                                <input class="span8" type="text" name="profundidade" placeholder="Profundidade">
+                                                <input class="span8" type="text" name="peso" placeholder="Peso">
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +62,7 @@
                                         <label class="control-label" for="basicinput">Valor de Compra</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" placeholder="5.000" name="valorCompra" class="span8"><span class="add-on">$</span>
+                                                <input type="text" placeholder="5.000" name="valorCompra" class="span8 money" value="100"><span class="add-on">$</span>
                                             </div>
                                         </div>
                                     </div>
@@ -68,72 +70,17 @@
                                         <label class="control-label" for="basicinput">Valor de Venda</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" placeholder="5.000" name="valorVenda" class="span8"><span class="add-on">$</span>
+                                                <input type="text" placeholder="5.000" name="valorVenda" class="span8 money" value="200"><span class="add-on">$</span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Imagens</label>
-                                        <button id="upload_widget" class="cloudinary-button">Upload files</button>
-
-                                            <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>  
-
-                                            <script type="text/javascript">  
-                                            function showUploadWidget() {
-                                                cloudinary.openUploadWidget({
-                                                    cloudName: "lucaspedroso",
-                                                    uploadPreset: "tb3la6jd",
-                                                    sources: [
-                                                        "local",
-                                                        "url",
-                                                        "camera"
-                                                    ],
-                                                    showAdvancedOptions: false,
-                                                    cropping: false,
-                                                    multiple: false,
-                                                    defaultSource: "local",
-                                                    styles: {
-                                                        palette: {
-                                                            window: "#FFFFFF",
-                                                            windowBorder: "#90A0B3",
-                                                            tabIcon: "#0078FF",
-                                                            menuIcons: "#5A616A",
-                                                            textDark: "#000000",
-                                                            textLight: "#FFFFFF",
-                                                            link: "#0078FF",
-                                                            action: "#FF620C",
-                                                            inactiveTabIcon: "#0E2F5A",
-                                                            error: "#F44235",
-                                                            inProgress: "#0078FF",
-                                                            complete: "#20B832",
-                                                            sourceBg: "#E4EBF1"
-                                                        },
-                                                        fonts: {
-                                                            default: null,
-                                                            "'Fira Sans', sans-serif": {
-                                                                url: "https://fonts.googleapis.com/css?family=Fira+Sans",
-                                                                active: true
-                                                            }
-                                                        }
-                                                    }
-                                                },
-                                                (err, info) => {
-                                                if (!err) {    
-                                                    console.log("Upload Widget event - ", info);
-                                                    if(info.info.secure_url){
-                                                        console.log('loading another')
-                                                        console.log(info.info.url)
-                                                        $('.image__hiden').val(info.info.url)
-                                                        console.log('end another')
-                                                    }
-                                                }
-                                                });
-                                                }
-                                            document.getElementById("upload_widget").addEventListener("click", function(){
-                                                showUploadWidget()
-                                            }, false);
-                                            </script>
-                                            <input type="hidden" name="images" value="" class="image__hiden"/>
+                                        <div class="controls">
+                                            <button id="upload_widget" class="cloudinary-button">Upload files</button>
+                                            <div class="file_name"></div>
+                                            <input type="hidden" name="imagens" value="" class="image__hiden"/>
+                                        </div>
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
@@ -158,5 +105,6 @@
     </div>
     <!--/.wrapper-->
     <% include ../partials/footer %>
+    <% include ./image-upload.ejs %>
 </body>
 </html>

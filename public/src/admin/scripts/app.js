@@ -23,10 +23,3 @@ $('#newProduct').on('submit', function(e){
         }
     })
 })
-
-let menuLateral = function(e){
-    e.preventDefault()
-    console.log($(this))
-    console.log('menu lateral')
-}
-$('')

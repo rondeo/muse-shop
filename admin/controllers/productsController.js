@@ -9,12 +9,24 @@ module.exports = (req, res) => {
     console.log(url)
     //console.log(url.charAt(req.url.length - 1))
     if(req.method === 'GET' && url === '/admin/products'){
-        return res.render('admin/products/index')
+        
+        let data = req.body ? req.body : '';
+
+        productsModel.getAll(data).then((response) => {
+            let dataResponse = response;
+            if(response){
+                return res.render('admin/products/index', {data: dataResponse}) 
+            }
+        }).catch( err => { 
+            console.log(err)
+            return res.render('admin/products/index')} 
+        )
+        
     }
     if(req.method === 'POST' && req.url === '/admin/new-product'){
         let data = req.body;
         if(!data.nome && !data.valorVenda){
-            res.send('Please verify your fields')
+            return res.send('Please verify your fields')
         }
         else{
             productsModel.newProduct(data).then((response) => {
@@ -23,8 +35,6 @@ module.exports = (req, res) => {
                 }
             }).catch(err => console.log(err))
         }
-        
-        return res.send('you are loading a post for product')
     }
     if(req.method === 'GET' && req.url === '/admin/new-product'){
         return res.render('admin/products/new-product')
