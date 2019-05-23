@@ -18,7 +18,7 @@ $('#newProduct').on('submit', function(e){
         success: function(response){
             $('.message').html(response)
             setTimeout(function(){
-                window.location = window.href;
+                window.location = window.location.href;
             }, 4000)
         },
         error: function(err){
