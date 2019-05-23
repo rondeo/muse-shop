@@ -16,10 +16,13 @@ $('#newProduct').on('submit', function(e){
         url: url,
         data: data,
         success: function(response){
-            console.log(response)
+            $('.message').html(response)
+            setTimeout(function(){
+                window.location = window.href;
+            }, 4000)
         },
         error: function(err){
-            console.log(err)
+            $('.message').html(response)
         }
     })
 })
