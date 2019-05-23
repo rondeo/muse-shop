@@ -19,7 +19,7 @@ $('#newProduct').on('submit', function(e){
             $('.message').html(response)
             setTimeout(function(){
                 window.location = window.location.href;
-            }, 4000)
+            }, 10000)
         },
         error: function(err){
             $('.message').html(response)
