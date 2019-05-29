@@ -3,7 +3,7 @@ let knex = require('../settings/db/knex')
 module.exports = {
     getAll: (data) => {
         return new Promise((resolve, reject) => {
-            knex('products').select('*').then( (response) => {
+            knex('products').select('*').then(response => {
 
                 response ? resolve(response) : console.log('No data found')
 
@@ -11,12 +11,15 @@ module.exports = {
         })
     },
     get: (data) => {
-        return new Promise( (resolve, reject) =>{
+        return new Promise((resolve, reject) => {
             knex('products').select('*').where(data).then(response => {
 
                 response ? resolve(response) : console.log('No data found')
-            
+
             }).catch(err => reject(err))
         })
-    }
+    },
+    getFew: data => new Promise((resolve, reject) => {
+
+    })
 }

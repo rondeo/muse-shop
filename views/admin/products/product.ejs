@@ -1,1 +1,136 @@
-<h1>You are on the product page</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+<% data = data[0] %>
+
+<body>
+    <% include ../partials/header %>
+    <!-- /navbar -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <% include ../partials/sidebar %>
+                </div>
+                <!--/.span3-->
+                <div class="span9">
+                    <div class="content">
+                        <div class="module">
+                            <div class="module-head">
+                                <h3>Novo Produto</h3>
+                            </div>
+                            <div class="module-body">
+                                <form class="form-horizontal row-fluid" id="editProduct">
+                                    <input type="hidden" name="id" value="<%= data.id %>">
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Nome</label>
+                                        <div class="controls">
+                                            <input type="text" id="basicinput" name="nome"
+                                                placeholder="Digite o nome do produto" class="span8"
+                                                value="<%= data.nome %>">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Fornecedor</label>
+                                        <div class="controls">
+                                            <input type="text" id="basicinput" name="fornecedor"
+                                                placeholder="Digite o fornecedor do produto" class="span8"
+                                                value="<%= data.fornecedor %>">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Ficha Tecnica</label>
+                                        <div class="controls">
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="altura" placeholder="Altura"
+                                                    value="<%= data.altura %>">
+                                            </div>
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="largura" placeholder="Largura"
+                                                    value="<%= data.largura %>">
+                                            </div>
+                                            <div class="input-prepend">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="profundidade"
+                                                    placeholder="Profundidade" value="<%= data.profundidade %>">
+                                            </div>
+
+                                            <div class="input-prepend m-top-30">
+                                                <span class="add-on">#</span>
+                                                <input class="span8" type="text" name="peso" placeholder="Peso"
+                                                    value="<%= data.peso %>">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Quantidade</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5" name="quantidade" class="span8"
+                                                    value="<%= data.quantidade %>"><span class="add-on">#</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Valor de Compra</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5.000" name="valorCompra"
+                                                    class="span8 money" value="<%= data.valorCompra %>"><span
+                                                    class="add-on">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Valor de Venda</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5.000" name="valorVenda"
+                                                    class="span8 money" value="<%= data.valorVenda %>"><span
+                                                    class="add-on">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Imagens</label>
+                                        <div class="controls">
+                                            <button id="upload_widget" class="cloudinary-button">Upload files</button>
+                                            <div class="file_name"></div>
+                                            <input type="hidden" name="imagens" value="" class="image__hiden" />
+                                            <img class="product-image" src="<%= data.imagens %>" alt="" srcset="">
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+                                            <textarea class="span8" name="obs" rows="5"><%= data.obs %></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="control-group">
+                                        <div class="controls">
+
+                                            <div class="response"></div>
+                                            <button type="submit" class="btn">Submit Form</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.content-->
+                </div>
+                <!--/.span9-->
+            </div>
+        </div>
+        <!--/.container-->
+    </div>
+    <!--/.wrapper-->
+    <% include ../partials/footer %>
+    <% include ./image-upload.ejs %>
+</body>
+
+</html>

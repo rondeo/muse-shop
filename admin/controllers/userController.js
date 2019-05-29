@@ -1,12 +1,8 @@
-module.exports = (req, res) => {
-    if(req.method === 'GET' && req.url === '/admin/users'){
-        return res.render('admin/users/index')
-    }
-    if(req.method === 'POST'){
-        let data = req.body;
-        return res.send('you are loading a post for product')
-    }
-    if(req.method === 'GET' && req.url === '/admin/new-user'){
-        return res.render('admin/users/new-user')
-    }
-}
+const express = require('express')
+const router = express.Router()
+
+router.get('/users', (req, res) => res.render('admin/users/index'))
+router.post('/users', (req, res) => res.send('you are loading the post for user'))
+router.get('/new-user', (req, res) => res.render('admin/users/new-user'))
+
+module.exports = router;

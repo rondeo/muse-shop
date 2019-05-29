@@ -6,7 +6,7 @@ shoe.cart.on('shoe_checkout', function (evt) {
 	if (this.subtotal() > 0) {
 		items = this.items();
 
-		for (i = 0, len = items.length; i < len; i++) {}
+		for (i = 0, len = items.length; i < len; i++) { }
 	}
 });
 
@@ -35,11 +35,12 @@ jQuery(document).ready(function ($) {
 	});
 });
 
-window.onload = function(){
+window.onload = function () {
 	document.getElementById("loading").remove();
 
 }
 
-function searchProducts(){
+function searchProducts() {
 	return false;
 }
+

@@ -23,17 +23,20 @@
                                 <h3>Novo Produto</h3>
                             </div>
                             <div class="module-body">
-                                <form class="form-horizontal row-fluid" id="newProduct" method="POST" action="/admin/new-product" >
+                                <form class="form-horizontal row-fluid" id="newProduct" method="POST"
+                                    action="/admin/new-product">
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Nome</label>
                                         <div class="controls">
-                                            <input type="text" id="basicinput" name="nome" placeholder="Digite o nome do produto" class="span8">
+                                            <input type="text" id="basicinput" name="nome"
+                                                placeholder="Digite o nome do produto" class="span8">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Fornecedor</label>
                                         <div class="controls">
-                                            <input type="text" id="basicinput" name="fornecedor" placeholder="Digite o fornecedor do produto" class="span8">
+                                            <input type="text" id="basicinput" name="fornecedor"
+                                                placeholder="Digite o fornecedor do produto" class="span8">
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -49,7 +52,8 @@
                                             </div>
                                             <div class="input-prepend">
                                                 <span class="add-on">#</span>
-                                                <input class="span8" type="text" name="profundidade" placeholder="Profundidade">
+                                                <input class="span8" type="text" name="profundidade"
+                                                    placeholder="Profundidade">
                                             </div>
 
                                             <div class="input-prepend m-top-30">
@@ -62,15 +66,28 @@
                                         <label class="control-label" for="basicinput">Valor de Compra</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" placeholder="5.000" name="valorCompra" class="span8 money" value="100"><span class="add-on">$</span>
+                                                <input type="text" placeholder="5.000" name="valorCompra"
+                                                    class="span8 money" value=""><span class="add-on">$</span>
                                             </div>
                                         </div>
                                     </div>
+
                                     <div class="control-group">
                                         <label class="control-label" for="basicinput">Valor de Venda</label>
                                         <div class="controls">
                                             <div class="input-append">
-                                                <input type="text" placeholder="5.000" name="valorVenda" class="span8 money" value="200"><span class="add-on">$</span>
+                                                <input type="text" placeholder="5.000" name="valorVenda"
+                                                    class="span8 money" value=""><span class="add-on">$</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="basicinput">Quantidade Estoque</label>
+                                        <div class="controls">
+                                            <div class="input-append">
+                                                <input type="text" placeholder="5" name="quantidade" class="span8"
+                                                    value=""><span class="add-on">#</span>
                                             </div>
                                         </div>
                                     </div>
@@ -79,7 +96,7 @@
                                         <div class="controls">
                                             <button id="upload_widget" class="cloudinary-button">Upload files</button>
                                             <div class="file_name"></div>
-                                            <input type="hidden" name="imagens" value="" class="image__hiden"/>
+                                            <input type="hidden" name="imagens" value="" class="image__hiden" />
                                         </div>
                                     </div>
                                     <div class="control-group">
@@ -89,6 +106,7 @@
                                     </div>
                                     <div class="control-group">
                                         <div class="controls">
+                                            <div class="response"></div>
                                             <button type="submit" class="btn">Submit Form</button>
                                         </div>
                                     </div>
@@ -110,4 +128,5 @@
     <% include ../partials/footer %>
     <% include ./image-upload.ejs %>
 </body>
+
 </html>
