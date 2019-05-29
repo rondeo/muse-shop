@@ -1,5 +1,8 @@
-module.exports = (req, res) => {
-    if(req.method === 'GET'){
-        return res.send('you are on the admin login page')
-    }
-}
+const express = require('express')
+const router = express.Router()
+
+router.get('/login', (req, res) => {
+    return res.send('you are on the admin login page')
+})
+
+module.exports = router

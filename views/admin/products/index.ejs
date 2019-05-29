@@ -1,85 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <head>
         <% include ../partials/head %>
     </head>
-    
-    <body>
-        <% include ../partials/header %>
-        <!-- /navbar -->
-        <div class="wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="span3">
-                      <% include ../partials/sidebar %>
-                    </div>
-                    <!--/.span3-->
-                    <div class="span9">                        
-					    <div class="content">
-                            
-                                <div class="module">
-                                        <div class="module-head">
-                                            <h3> Produtos</h3>
-                                        </div>
-                                        <div class="module-body table">
-                                            <table cellpadding="0" cellspacing="0" border="0" class="datatable-1 table table-bordered table-striped	 display"
-                                                width="100%">
-                                                <thead>
-                                                    <tr>
-                                                        <th>
-                                                            ID
-                                                        </th>
-                                                        <th>
-                                                            Item
-                                                        </th>
-                                                        <th>
-                                                            Valor compra
-                                                        </th>
-                                                        <th>
-                                                            Valor venda
-                                                        </th>
-                                                        <th>
-                                                           Fornecedor
-                                                        </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    
-                                                    <% data.forEach((item) => { %>
-                                                        
-                                                    <tr class="gradeA">
-                                                        <td>
-                                                            <%= item.id %>
-                                                        </td>
-                                                        <td>
-                                                            <%= item.nome %>
-                                                        </td>
-                                                        <td>
-                                                            R$ <%= item.valorCompra %>
-                                                        </td>
-                                                        <td class="center">
-                                                            R$ <%= item.valorVenda %>
-                                                        </td>
-                                                        <td class="center">
-                                                            <%= item.fornecedor %>
-                                                        </td>
-                                                    </tr>
-                                                    
-                                                    <% }) %>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    <!--/.module-->
-                        </div><!--/.content-->
-                    </div>
-                    <!--/.span9-->
+
+<body>
+    <% include ../partials/header %>
+    <!-- /navbar -->
+    <div class="wrapper">
+        <div class="container">
+            <div class="row">
+                <div class="span3">
+                    <% include ../partials/sidebar %>
                 </div>
+                <!--/.span3-->
+                <div class="span9">
+                    <div class="content">
+
+                        <div class="module">
+                            <div class="module-head">
+                                <h3> Produtos</h3>
+                            </div>
+                            <div class="module-body table">
+                                <table cellpadding="0" cellspacing="0" border="0"
+                                    class="datatable-1 table table-bordered table-striped	 display" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th>
+                                                ID
+                                            </th>
+                                            <th>
+                                                Item
+                                            </th>
+                                            <th>
+                                                Valor compra
+                                            </th>
+                                            <th>
+                                                Valor venda
+                                            </th>
+                                            <th>
+                                                Fornecedor
+                                            </th>
+                                            <th>
+                                                Edit
+                                            </th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <% data.forEach((item) => { %>
+
+                                        <tr class="gradeA">
+                                            <td>
+                                                <%= item.id %>
+                                            </td>
+                                            <td>
+                                                <%= item.nome %>
+                                            </td>
+                                            <td>
+                                                R$ <%= item.valorCompra %>
+                                            </td>
+                                            <td class="center">
+                                                R$ <%= item.valorVenda %>
+                                            </td>
+                                            <td class="center">
+                                                <%= item.fornecedor %>
+                                            </td>
+                                            <td class="center">
+                                                <button data-id="<%= item.id %>" data-action="edit"
+                                                    class="btn-prod-action btn btn-primary">
+                                                    Edit
+                                                </button>
+                                                <button data-id="<%= item.id %>" data-action="delete"
+                                                    class="btn btn-danger btn-prod-action">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+
+                                        <% }) %>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <!--/.module-->
+                    </div>
+                    <!--/.content-->
+                </div>
+                <!--/.span9-->
             </div>
-            <!--/.container-->
         </div>
-        <!--/.wrapper-->  
-        <% include ../partials/footer %>
-      
-    </body>
+        <!--/.container-->
+    </div>
+    <!--/.wrapper-->
+    <% include ../partials/footer %>
+
+</body>

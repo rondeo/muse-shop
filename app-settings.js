@@ -1,16 +1,16 @@
 let config = {
     local_port: 4000,
     local_database: {
-        client:'mysql',
+        client: 'mysql',
         connection: {
             host: 'localhost',
             user: 'root',
-            password: '',
+            password: 'root',
             database: 'museshop'
         },
     },
     prod_database: {
-        client:'mysql',
+        client: 'mysql',
         connection: {
             host: 'zf4nk2bcqjvif4in.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
             user: 'bduuk8td0n8e39yu',

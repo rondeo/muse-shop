@@ -1,5 +1,10 @@
-module.exports = (req, res) => {
-    if(req.method === 'GET'){
-       return res.render('admin/index')
-    }
-}
+const express = require('express')
+const router = express.Router()
+
+router.get('/', (req, res) => {
+    //return res.send('loading the home of admin')
+    return res.render('admin/index')
+})
+
+
+module.exports = router

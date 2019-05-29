@@ -1,3 +1,6 @@
-module.exports = (req, res) => {
-    return res.render('site/contact')
-}
+const express = require('express')
+let router = express.Router()
+
+router.get('/contato', (req, res) => res.render('site/contact'))
+
+module.exports = router;
