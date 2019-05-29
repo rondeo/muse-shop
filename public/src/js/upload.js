@@ -1,4 +1,4 @@
-$('.money').mask('000,000,000,000,000.00', {reverse: true});
+
 function showUploadWidget() {
     cloudinary.openUploadWidget({
         cloudName: "lucaspedroso",
@@ -37,20 +37,20 @@ function showUploadWidget() {
             }
         }
     },
-    (err, info) => {
-    if (!err) {    
-        //console.log("Upload Widget event - ", info);
-        if(info.info.secure_url){
-            $('.image__hiden').val(info.info.url)
-            $('.file_name').append(info.info.original_filename+'.' + info.info.format);
-            console.log(info.info)
-        }
-    }
-    return false;
-    });
+        (err, info) => {
+            if (!err) {
+                //console.log("Upload Widget event - ", info);
+                if (info.info.secure_url) {
+                    $('.image__hiden').val(info.info.url)
+                    $('.file_name').append(info.info.original_filename + '.' + info.info.format);
+                    console.log(info.info)
+                }
+            }
+            return false;
+        });
 }
 
-document.getElementById("upload_widget").addEventListener("click", function(e){
+document.getElementById("upload_widget").addEventListener("click", function (e) {
     e.preventDefault()
     showUploadWidget()
     return false;

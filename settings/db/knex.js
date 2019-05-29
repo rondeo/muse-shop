@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 else {
     options = config.prod_database
 }
-
+console.log(options)
 let knex = require('knex')(options);
 
 module.exports = knex;

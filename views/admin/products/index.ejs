@@ -36,12 +36,6 @@
                                                 Item
                                             </th>
                                             <th>
-                                                Valor compra
-                                            </th>
-                                            <th>
-                                                Valor venda
-                                            </th>
-                                            <th>
                                                 Fornecedor
                                             </th>
                                             <th>
@@ -60,20 +54,14 @@
                                             <td>
                                                 <%= item.nome %>
                                             </td>
-                                            <td>
-                                                R$ <%= item.valorCompra %>
-                                            </td>
-                                            <td class="center">
-                                                R$ <%= item.valorVenda %>
-                                            </td>
                                             <td class="center">
                                                 <%= item.fornecedor %>
                                             </td>
                                             <td class="center">
-                                                <button data-id="<%= item.id %>" data-action="edit"
-                                                    class="btn-prod-action btn btn-primary">
+                                                <a href="/admin/product/<%= item.id %>" data-action="edit"
+                                                    class="btn btn-primary">
                                                     Edit
-                                                </button>
+                                                </a>
                                                 <button data-id="<%= item.id %>" data-action="delete"
                                                     class="btn btn-danger btn-prod-action">
                                                     Delete
@@ -96,6 +84,14 @@
         <!--/.container-->
     </div>
     <!--/.wrapper-->
+    <div class="popup">
+        <div class="content">
+            <div class="message"></div>
+            <div class="buttons">
+                <button class="btn btn-primary" onclick='cancelPopUp()'>Cancel</button>
+            </div>
+        </div>
+    </div>
     <% include ../partials/footer %>
 
 </body>
