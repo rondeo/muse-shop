@@ -2582,3 +2582,35 @@ button.btn1 {
 .callbacks_tabs{
     display: none;
 }
+.info{
+    padding: 60px 0;
+    margin-bottom: 60px;
+}
+.info-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.info-item img{
+    max-width: 50px;
+}
+
+.info-item .label{
+    color: #000;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-top: 20px;
+    line-height: 2em;
+}
+.social{
+    margin: 40px 0;
+    float: left;
+    width: 100%;
+}
+.social .social-box ul.social-nav{
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
