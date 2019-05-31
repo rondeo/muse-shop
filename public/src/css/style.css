@@ -2614,3 +2614,17 @@ button.btn1 {
     align-items: center;
     justify-content: center;
 }
+.def-100{
+    float: left;
+    width: 100%;
+}
+.center{
+    text-align: center;
+}
+.distance-60{
+    margin: 60px 0;
+}
+
+.m-bottom-60{
+    margin-bottom: 60px;
+}
