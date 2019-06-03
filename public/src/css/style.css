@@ -2628,3 +2628,14 @@ button.btn1 {
 .m-bottom-60{
     margin-bottom: 60px;
 }
+
+img.product-image-home{
+    max-height: 312px;
+    width: auto;
+}
+.item-info-product h4{
+    height: 57px;
+}
+.product-item{
+    padding: 0;
+}
