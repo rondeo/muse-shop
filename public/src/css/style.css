@@ -2639,3 +2639,7 @@ img.product-image-home{
 .product-item{
     padding: 0;
 }
+/* hero */
+.hero img{
+    width: 100%;
+}

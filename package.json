@@ -6,7 +6,7 @@
   "scripts": {
     "start": "NODE_ENV=dev node app.js",
     "mac": "NODE_ENV=dev nodemon app.js",
-    "windows": "NODE_ENV=dev node app.js",
+    "windows": "NODE_ENV=dev nodemon app.js",
     "web": "node app.js"
   },
   "keywords": [],

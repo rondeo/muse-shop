@@ -22,6 +22,7 @@ router.get('/', (req, res) => {
         }else{
             products = null
         }
+      
         return res.render('site/home', {data: products})
     })
     .catch( err => {
