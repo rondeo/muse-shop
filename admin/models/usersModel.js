@@ -10,11 +10,17 @@ module.exports = {
 			})
 	    });
 		},
-		getAll: (data) => {
-			return new Promise( ( resolve, reject ) => {
-				knex('products').select('*').then(response => {
+		getAll: (data) => new Promise( ( resolve, reject ) => {
+			knex('users').select('*')
+				.then(response => {
 					resolve(response)
-				}).catch(err => { reject(err) })
-			})
-		}
+				})
+				.catch(err => { reject(err) })
+		}),
+		delete: (data)=> new Promise( (resolve, reject)=> {
+			knex('users').where('id', id).del()
+				.then(response => {
+					resolve(response)
+				})
+		})
 }

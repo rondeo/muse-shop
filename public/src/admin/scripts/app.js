@@ -60,26 +60,7 @@ $('.btn-prod-action').click(function (e) {
     var id = $this.attr('data-id')
 
     showPopUp('Voce tem certeza?', id)
-    // if (action == 'delete') {
-    //     method = 'delete'
-
-    //     var data = {
-    //         id: id
-    //     }
-    //     $.ajax({
-    //         method: method,
-    //         url: url,
-    //         data: data,
-    //         success: function (response) {
-    //             console.log(response)
-    //         },
-    //         error: function (err) {
-    //             console.log(err)
-    //         }
-    //     })
-    // }
-
-
+    
     return false;
 })
 function buttonConsole() {
