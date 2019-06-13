@@ -6,14 +6,18 @@ module.exports = {
 		let responseData = {};
 		knex('users').where('email', email)
 			.then(response => {
-				console.log(response, 'model line 9')
+
 				if(response.length){
+
 					knex('users').where('email', email).andWhere('password', password).then(authResponse => {
+
 						if (authResponse.length) {
+
 								responseData = {
 									code: 200,
 									response: authResponse
 								}
+								
 								resolve(responseData)
 							}
 							else {

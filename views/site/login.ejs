@@ -4,16 +4,71 @@
 <head>
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <% include partials/head.ejs %>
-    <link href="/auth/static/css/style.css" rel="stylesheet">
 
 </head>
 
 <body>
+    <div id="home">
+        <div class="container internal-header">
+        
+        <div class="wrapper_top_w3layouts">
+            <div class="header_agileits">
+                <div class="logo inner_page_log">
+                    <h1><a class="navbar-brand" href="/"><span>MUSE</span></a></h1>
+                </div>
+                <div class="overlay overlay-contentpush">
+                    <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+                    <nav>
+                        <ul>
+                            <li><a href="/" class="active">Home</a></li>
+                            <li><a href="/about-us">About</a></li>
+                            <li><a href="/produtos">Shop Now</a></li>
+                            <li><a href="/contato">Contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="mobile-nav-button">
+                    <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                </div>
+                <!-- cart details -->
+                <div class="top_nav_right">
+                    <div class="shoecart shoecart2 cart cart box_1">
+                        <form action="#" method="post" class="last">
+                            <input type="hidden" name="cmd" value="_cart">
+                            <input type="hidden" name="display" value="1">
+                            <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- //cart details -->
+        <!-- search -->
+        <div class="search_w3ls_agileinfo">
+            <div class="cd-main-header">
+                <ul class="cd-header-buttons">
+                    <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                </ul>
+            </div>
+            <div id="cd-search" class="cd-search">
+                <form action="#" method="post">
+                    <input name="Search" type="search" placeholder="Click enter after typing...">
+                </form>
+            </div>
+        </div>
+        <!-- //search -->
+        <div class="clearfix"></div>
+        <!-- /banner_inner -->
+        </div>
+    </div>
+    <!-- //banner_inner -->
     <div id="login"></div>
     <!-- scripts -->
 
-    <script>!function (l) { function e(e) { for (var r, t, n = e[0], o = e[1], u = e[2], f = 0, i = []; f < n.length; f++)t = n[f], p[t] && i.push(p[t][0]), p[t] = 0; for (r in o) Object.prototype.hasOwnProperty.call(o, r) && (l[r] = o[r]); for (s && s(e); i.length;)i.shift()(); return c.push.apply(c, u || []), a() } function a() { for (var e, r = 0; r < c.length; r++) { for (var t = c[r], n = !0, o = 1; o < t.length; o++) { var u = t[o]; 0 !== p[u] && (n = !1) } n && (c.splice(r--, 1), e = f(f.s = t[0])) } return e } var t = {}, p = { 1: 0 }, c = []; function f(e) { if (t[e]) return t[e].exports; var r = t[e] = { i: e, l: !1, exports: {} }; return l[e].call(r.exports, r, r.exports, f), r.l = !0, r.exports } f.m = l, f.c = t, f.d = function (e, r, t) { f.o(e, r) || Object.defineProperty(e, r, { enumerable: !0, get: t }) }, f.r = function (e) { "undefined" != typeof Symbol && Symbol.toStringTag && Object.defineProperty(e, Symbol.toStringTag, { value: "Module" }), Object.defineProperty(e, "__esModule", { value: !0 }) }, f.t = function (r, e) { if (1 & e && (r = f(r)), 8 & e) return r; if (4 & e && "object" == typeof r && r && r.__esModule) return r; var t = Object.create(null); if (f.r(t), Object.defineProperty(t, "default", { enumerable: !0, value: r }), 2 & e && "string" != typeof r) for (var n in r) f.d(t, n, function (e) { return r[e] }.bind(null, n)); return t }, f.n = function (e) { var r = e && e.__esModule ? function () { return e.default } : function () { return e }; return f.d(r, "a", r), r }, f.o = function (e, r) { return Object.prototype.hasOwnProperty.call(e, r) }, f.p = "/"; var r = window.webpackJsonp = window.webpackJsonp || [], n = r.push.bind(r); r.push = e, r = r.slice(); for (var o = 0; o < r.length; o++)e(r[o]); var s = n; a() }([])</script>
-    <script src="/auth/static/js/2.9950453b.chunk.js"></script>
-    <script src="/auth/static/js/main.99069b7f.chunk.js"></script>
+    
+    <!-- scripts -->
+    <% include partials/auth_assets.ejs %>
+  
 </body>
 </html>

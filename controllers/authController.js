@@ -3,13 +3,13 @@ const express = require('express')
 const router = express.Router()
 const authVerifier = require('../providers/authVerifier')
 
-function replaceAll(str, find, replace) {
-    return str.replace(new RegExp(escapeRegExp(find), 'g'), replace);
-}
+
 
 router.get('/login', (req, res) => res.render('site/login'))
 router.get('/sign-up', (req, res) => res.render('site/sign-up'))
-
+router.get('/forgot-password', (req, res) => {
+    return res.render('site/forgot')
+})
 router.post('/login', (req, res) => {
     let data = {};
     if (!req.body.email && !req.body.password) {
@@ -22,10 +22,11 @@ router.post('/login', (req, res) => {
         if (response.code == 200) {
                 let dataResponse = {
                     code: 200,
-                    url: '/',
+                    url: '/home',
                     message: 'Login Ok',
                     token: 'laskdjf09a8sdfasdf0a9s8dflaksjdf098'
                 }
+                console.log(dataResponse, 'linha 28')
                 return res.json(dataResponse);
             } 
             else if(response.code === 205){
@@ -40,12 +41,10 @@ router.post('/login', (req, res) => {
             }
     }).catch(err => console.log(err))
 })
-
 router.post('/sign-up', (req, res) => {
     let data = req.body;
     let response = authVerifier(data)
     if (response.isValid) {
-        data.cpf = replaceAll(data.cpf, '.', '')
         data.cpf = data.cpf.trim()
         authModel.signUp(data).then(response => {
             let dataResponse = {}

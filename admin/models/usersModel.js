@@ -17,7 +17,7 @@ module.exports = {
 				})
 				.catch(err => { reject(err) })
 		}),
-		delete: (data)=> new Promise( (resolve, reject)=> {
+		delete: (id)=> new Promise( (resolve, reject)=> {
 			knex('users').where('id', id).del()
 				.then(response => {
 					resolve(response)

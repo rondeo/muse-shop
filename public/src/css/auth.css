@@ -1,0 +1,13 @@
+body .right form input, .right form label{
+	font-size: 1.1em;
+}
+body .right form h2{
+	font-size: 1.6em;
+	margin: 20px 0;
+}
+body form .options a{
+	font-size: 1.1em;
+}
+.right{
+	padding-top: 140px;
+}
