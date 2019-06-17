@@ -2,6 +2,10 @@ const authModel = require('../models/authModel')
 const express = require('express')
 const router = express.Router()
 const authVerifier = require('../providers/authVerifier')
+const jwt = require('jsonwebtoken')
+const config = require('../app-settings')
+const { api_secret } = config
+const ensureToken = require('../providers/ensureToken')
 
 
 
@@ -20,25 +24,32 @@ router.post('/login', (req, res) => {
 
     authModel.verifyLogin(data).then(response => {
         if (response.code == 200) {
-                let dataResponse = {
-                    code: 200,
-                    url: '/',
-                    message: 'Login Ok',
-                    token: 'laskdjf09a8sdfasdf0a9s8dflaksjdf098'
-                }
-                console.log(dataResponse, 'linha 28')
-                return res.json(dataResponse);
-            } 
-            else if(response.code === 205){
-                return res.json(response)
+            let responseData = response.response
+            let user = {
+                id: responseData[0].id,
+                name: responseData[0].nome
             }
-            else {
-                let dataResponse = {
-                    code: 121,
-                    message: 'Senha incorreta'
-                }
-                return res.json(dataResponse)
+
+            let token = jwt.sign({ user }, api_secret)
+            let dataResponse = {
+                code: 200,
+                url: '/',
+                message: 'Login Ok',
+                token: token
             }
+
+            return res.json(dataResponse);
+        }
+        else if (response.code === 205) {
+            return res.json(response)
+        }
+        else {
+            let dataResponse = {
+                code: 121,
+                message: 'Senha incorreta'
+            }
+            return res.json(dataResponse)
+        }
     }).catch(err => console.log(err))
 })
 router.post('/sign-up', (req, res) => {
@@ -73,5 +84,21 @@ router.post('/sign-up', (req, res) => {
     } else {
         return res.json(response)
     }
+})
+router.get('/api/verifyToken', ensureToken, (req, res) => {
+    jwt.verify(req.token, api_secret, (err, data) => {
+        if (err) {
+            res.json({
+                isProtected: false
+            })
+        }
+        else {
+            res.json({
+                text: 'this is protected',
+                data: data,
+                isProtected: true
+            })
+        }
+    })
 })
 module.exports = router;

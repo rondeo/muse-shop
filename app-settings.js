@@ -19,7 +19,8 @@ let config = {
         },
     },
     root_path: __dirname,
-    application_name: 'muse-shop'
+    application_name: 'muse-shop',
+    api_secret: 'K<P-4UWdpzmJHCp'
 }
 
 module.exports = config
