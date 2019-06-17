@@ -7,20 +7,24 @@
 
 <body>
     <% include partials/header.ejs %>
+    <div class="hero"><img src="/images/hero-image.jpg" alt=""></div>
     <!-- //banner -->
+    <div id="modal-lead"></div>
     <div class="info">
         <div class="container">
-            <div class="col-md-4 info-item">
-                <img src="/src/images/delivery-truck.svg" alt="" />
-                <div class="label">Envio pelos correios <br> <small>para todo o Brasil</small> </div>
-            </div>
-            <div class="col-md-4 info-item">
-                <img src="/src/images/cards.svg" alt="">
-                <div class="label">Pague em até 5x <br> <small>com todos os cartões de crédito</small> </div>
-            </div>
-            <div class="col-md-4 info-item">
-                <img src="/src/images/lock.svg" alt="">
-                <div class="label"> Site Seguro <br> <small>Protegemos seus dados</small> </div>
+            <div class="row">
+                <div class="col-md-4 info-item">
+                    <img src="/src/images/delivery-truck.svg" alt="" />
+                    <div class="label">Envio pelos correios <br> <small>para todo o Brasil</small> </div>
+                </div>
+                <div class="col-md-4 info-item">
+                    <img src="/src/images/cards.svg" alt="">
+                    <div class="label">Pague em até 5x <br> <small>com todos os cartões de crédito</small> </div>
+                </div>
+                <div class="col-md-4 info-item">
+                    <img src="/src/images/lock.svg" alt="">
+                    <div class="label"> Site Seguro <br> <small>Protegemos seus dados</small> </div>
+                </div>
             </div>
         </div>
     </div>
@@ -49,78 +53,16 @@
     <div class="def-100 center m-bottom-60">
         <h2>PRODUTOS EM DESTAQUE</h2>
     </div>
-    <!-- top Products -->
-    <div class="ads-grid_shop">
-        <div class="shop_inner_inf ">
-            <div class="container">
-
-
-                <div class="left-ads-display col-md-12">
-                    <div class="wrapper_top_shop">
-                        <div class="clearfix"></div>
-                        <!-- product-sec1 -->
-                        <div class="product-sec1">
-                            <!--/mens-->
-                            <% data.map(item => { %>
-                            <div class="col-md-4 product-item">
-                                <div class="product-shoe-info shoe">
-                                    <div class="men-pro-item">
-                                        <div class="men-thumb-item">
-                                            <img class="product-image-home" src="<%= item.image %>" alt="">
-                                            <div class="men-cart-pro">
-                                                <div class="inner-men-cart-pro">
-                                                    <a href="/product/<%= item.id %>"
-                                                        class="link-product-add-cart">Quick View</a>
-                                                </div>
-                                            </div>
-                                            <span class="product-new-top">New</span>
-                                        </div>
-                                        <div class="item-info-product">
-                                            <h4>
-                                                <a href="/product/<%= item.id %>"> <%= item.name %> </a>
-                                            </h4>
-                                            <div class="info-product-price">
-                                                <div class="grid_meta">
-                                                    <div class="product_price">
-                                                        <div class="grid-price ">
-                                                            <span class="money ">R$ <%= item.price %></span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="shoe single-item hvr-outline-out">
-                                                    <form action="#" method="post">
-                                                        <input type="hidden" name="cmd" value="_cart">
-                                                        <input type="hidden" name="add" value="1">
-                                                        <input type="hidden" name="shoe_item" value="<%= item.name %>">
-                                                        <input type="hidden" name="amount" value="<%= item.price %>">
-                                                        <button type="submit" class="shoe-cart pshoe-cart"><i
-                                                                class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-                                                        <a href="#" data-toggle="modal" data-target="#myModal1"></a>
-                                                    </form>
-
-                                                </div>
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <% }) %>
-
-                            <div class="clearfix"></div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="clearfix"></div>
-            </div>
+    <section class="products">
+        <div class="container">
+            <div id="products" class="def-100"></div>
         </div>
-    </div>
+    </section>
+
     <!-- //top products -->
     <!--//banner -->
     <% include partials/footer.ejs %>
+    <% include partials/react_ui.ejs %>
 </body>
 
 </html>

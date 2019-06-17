@@ -74,13 +74,6 @@ a:focus {
     position: relative;
 }
 
-.logo {
-    position: absolute;
-    z-index: 99;
-    left: 7%;
-    top: 6.5%;
-}
-
 .logo.inner_page_log {
     position: absolute;
     z-index: 99;
@@ -2591,6 +2584,7 @@ button.btn1 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    text-align: center;
 }
 .info-item img{
     max-width: 50px;

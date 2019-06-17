@@ -22,7 +22,7 @@ router.post('/login', (req, res) => {
         if (response.code == 200) {
                 let dataResponse = {
                     code: 200,
-                    url: '/home',
+                    url: '/',
                     message: 'Login Ok',
                     token: 'laskdjf09a8sdfasdf0a9s8dflaksjdf098'
                 }
