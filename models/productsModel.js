@@ -3,7 +3,7 @@ let knex = require('../settings/db/knex')
 module.exports = {
     getAll: (data) => new Promise((resolve, reject) => {
         knex('products').select('*').then(response => {
-            response ? resolve(response) : resolve(0)
+            response.length ? resolve(response) : resolve(0)
         }).catch(err => reject(err))
     }),
     get: (data) => new Promise((resolve, reject) => {
@@ -13,17 +13,13 @@ module.exports = {
     }),
     getFew: data => new Promise((resolve, reject) => {
         let { counter } = data;
-        knex.select('*').from('products').limit(counter).then(response => {
-            if (response.length) {
-                resolve(response)
-            }
-            else {
-                resolve(0)
-            }
-        }).catch(err => {
-            console.log(err)
-            reject(0)
-        })
+        knex.select('*').from('products').limit(counter)
+            .then(response => {
+                response.length ? resolve(response) : resolve(0)
+            }).catch(err => {
+                console.log(err)
+                reject(0)
+            })
 
     }),
     getOne: data => new Promise((resolve, reject) => {
@@ -37,5 +33,20 @@ module.exports = {
             }
         })
             .catch(err => reject(err))
+    }),
+    getLike: data => new Promise((resolve, reject) => {
+
+        knex('products').where('nome', 'like', `%${data}%`)
+            .then(response => {
+                if (response.length) {
+                    resolve(response)
+                }
+                else {
+                    resolve('0')
+                }
+            })
+            .catch(err => {
+                reject(err)
+            })
     })
 }

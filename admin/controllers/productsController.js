@@ -52,7 +52,6 @@ router.delete('/product', (req, res) => {
             res.send('Something went wrong, try it later')
         }
     })
-    console.log('loading delete')
 })
 
 router.get('/product/:id', (req, res) => {

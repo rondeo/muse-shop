@@ -27,10 +27,11 @@ router.post('/login', (req, res) => {
             let responseData = response.response
             let user = {
                 id: responseData[0].id,
-                name: responseData[0].nome
+                name: responseData[0].nome,
+                role: responseData[0].role
             }
-
             let token = jwt.sign({ user }, api_secret)
+            res.cookie('jwt', token);
             let dataResponse = {
                 code: 200,
                 url: '/',

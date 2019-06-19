@@ -2,7 +2,7 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/login', (req, res) => {
-    return res.send('you are on the admin login page')
+    return res.render('admin/login')
 })
 
 module.exports = router

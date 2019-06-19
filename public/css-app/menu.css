@@ -159,3 +159,7 @@
     align-items: center;
     justify-content: center;
 }
+
+#signup form {
+    max-width: 90%;
+}

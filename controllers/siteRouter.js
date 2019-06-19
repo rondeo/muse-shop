@@ -12,4 +12,5 @@ module.exports = (app) => {
     app.use('/', authController)
     app.use('/', homeController)
     app.use('/', productsController)
+    app.get('/logout', (req, res) => res.redirect('/'))
 }

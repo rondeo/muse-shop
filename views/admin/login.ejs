@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <head>
+        <% include partials/head %>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    </head>
+
+<body>
+    <div id="login" class="admin_login">
+    </div>
+    <!--/.wrapper-->
+    <script>
+        window.loginLabel = 'Admin'
+    </script>
+    <% include ./partials/react_ui_admin.ejs %>
+    <% include ./partials/footer %>
+    <style>
+        .input-text_wrapper input {
+            height: 3em;
+        }
+    </style>
+</body>
