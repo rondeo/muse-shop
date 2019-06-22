@@ -36,7 +36,6 @@
     "mysql": "^2.16.0",
     "node-correios": "^2.2.0",
     "nodemon": "^1.18.6",
-    "npm": "^6.9.0",
     "validar-cpf": "^2.1.1"
   }
 }
